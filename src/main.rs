@@ -2,25 +2,23 @@
 
 fn main() {
     level_one::fun_a_to_Z();
-    level_one::level_two::fun_z_to_A();
-    for i in 'A'..('z' as u8 + 1) as char {
-        if i>'Z' && i < 'a' { continue }
-        println!("{i}")
-    }
+    level_one::level_two::fun_A_to_z()
+
 }
 
 mod level_one {
+
     pub fn fun_a_to_Z(){
-        for i in 65_u8..123_u8 {
-            if i>90 && i<97 { continue }
-            println!("{}",i as char)
+        //a ～ Z 之间，开区间
+        for i in ('Z' as u8 +1) as char..'a'{
+            println!("{i}")
         }
     }
-    pub mod level_two{
-        pub fn fun_z_to_A(){
-            for i in (65_u8..123_u8).rev() {
-                if i>90 && i<97 { continue }
-                println!("{}",i as char)
+
+    pub mod level_two {
+        pub fn fun_A_to_z() {
+            for i in 'A'..('z' as u8 + 1) as char {
+                println!("{i}")
             }
         }
     }
