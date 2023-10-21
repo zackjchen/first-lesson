@@ -3,6 +3,10 @@
 fn main() {
     level_one::fun_a_to_Z();
     level_one::level_two::fun_z_to_A();
+    for i in 'A'..('z' as u8 + 1) as char {
+        if i>'Z' && i < 'a' { continue }
+        println!("{i}")
+    }
 }
 
 mod level_one {
